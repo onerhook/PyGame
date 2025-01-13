@@ -1,3 +1,4 @@
+#main.py
 import pygame
 import time
 from player import Player
