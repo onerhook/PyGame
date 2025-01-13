@@ -1,5 +1,6 @@
 # PyGame
 project/
+
 │
 
 ├── assets/               # Папка для ресурсов
