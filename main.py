@@ -64,7 +64,26 @@ def main_game():
 
     # Завершаем игру, сохраняя результаты
     save_result("Player1", level, score, elapsed_time)
+    def start_screen():
+    screen.fill((0, 0, 0))  # Черный фон
+    title = font.render("Гармония Хаоса", True, (255, 255, 255))
+    start_button = pygame.Rect(300, 400, 200, 50)
+    
+    pygame.draw.rect(screen, (0, 255, 0), start_button)
+    screen.blit(title, (300, 100))
+    pygame.display.flip()
+    
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if start_button.collidepoint(event.pos):
+                    waiting = False
+    
+    main_game()
 
 # Запуск игры
-main_game()
+start_screen()
 pygame.quit()
